@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+#one {
+	width: 100px;
+	height: 100px;
+	background: red;
+	float: left;
+}
+
+#two {
+	width: 100px;
+	height: 100px;
+	background: green;
+	float: left;/* two向左浮动，即向左飘了起来，位置空了出来，three会来到空出来的位置 */
+}
+
+#three {
+	width: 150px;
+	height: 150px;
+	background: blue;
+	clear: both;/* 因为前面两个div都飘了起来了，第三个div就跑到空出来的位置，如果不想因为前面的div浮动的影响可以清楚浮动 */
+}
+</style>
+</head>
+<body>
+<p>清除浮动：
+   当有元素有浮动属性时，会对其父元素或后面的元素产生影响，会出现一个布局错乱现象，
+   可以通过清除浮动的方法来解决，浮动元素的影响
+ none：默认值，允许两边都可以有浮动对象
+ left：不允许左边有浮动对象
+ right：不允许右边有浮动对象
+ both：左右两侧不允许有浮动对象   </p>
+ 
+	<div id="one">1</div>
+	<div id="two">2</div>
+	<div id="three">3</div>
+</body>
+</html>

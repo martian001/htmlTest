@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+/* 不一样的浏览器对于以下元素会有默认的内外边距，所以写网页第一步就要把这些内外边距去掉 */
+body, div, ul, li, img, p, h1, h2, h3, h4, h5 {
+	margin: 0;
+	padding: 0;
+}
+
+div {
+	border: 1px solid black;
+}
+
+#heater {
+	background: red;
+	width: 700px;
+	margin: 0 auto; /* 水平居中 */
+	height: 50px;
+}
+
+#left {
+	background: pink;
+	width: 200px;
+	height: 500px;
+	float: left;
+}
+
+#right {
+	background: #ccc;
+	width: 200px;
+	height: 600px;
+	float: right;
+}
+
+#main {
+	margin: 0 auto;
+	width: 700px;
+	background: gold;
+	/* 由于main下面的left和right都用了浮动，所以父元素的背景色就看不见了 （ie6，7可以看见背景色）
+	  解决方法：在容器尾部增加一个（clear: both）的元素，强迫容器适应它的高度以便装下所有的float元素*/
+}
+
+#footer {
+	margin: 0 auto; /* 水平居中 */
+	background: blue;
+	width: 700px;
+	height: 50px;
+	width: 700px;
+	clear: both;
+	/* 因为前面left和right是已经是浮动了，所以footer会到飘起来的后面，为了不受影响，footer加了清除浮动 */
+	background: blue;
+}
+</style>
+</head>
+<body>
+	<div id="heater">heater</div>
+	<!-- 当父元素没有指定高度时，并且，子元素有浮动，这时，这个父元素的高度不会自动增加 -->
+	<div id="main">
+		<div id="left">left</div>
+		<div id="right">right</div>
+		<!-- 由于main下面的left和right都用了浮动，所以父元素的背景色就看不见了 （ie6，7可以看见背景色）
+	  解决方法：在容器尾部增加一个（clear: both）的元素，强迫容器适应它的高度以便装下所有的float元素 -->
+		<div style="clear: both;"></div><!-- 增加一个空的div -->
+	</div>
+	<div id="footer">footer</div>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+div{
+border: 1px solid #E05300;
+}
+#one {
+	background: green;
+	width: 100px;
+	height: 100px;
+}
+
+#two {
+	background: red;
+	width: 100px;
+	height: 100px;
+}
+
+#three {
+	background: blue;
+	width: 100px;
+	height: 100px;
+}
+</style>
+</head>
+<body>
+	<!-- 
+什么是浮动？
+     浮动是css实现布局的一种方式，包括div在内的任何元素都可以以浮动的方式进行显示。
+     浮动是将，块元素，霸道属性，独占一行的行为，取消，允许其他同一行
+     浮动其实是，这个块，从原来的文档流模式中，分离出来，他后的对象就视他不存在。
+     常见的布局效果：一行并列式，就是在一行中，显示几个块元素
+none：不浮动
+left：对象想左浮动，而对象的内容流向对象的右侧
+right：对象想右浮动， 而对象的内容流向对象的左侧
+
+css把网页元素，分为两类，一种是块，一种是内联元素
+块：body、div、p、h1
+-->
+	<p>文档流模式布局</p>
+	<div id="one">1</div>
+	<div id="two">2</div>
+	<div id="three">3</div>
+	
+	
+	<p>右浮动模式布局(对象想右浮动， 而对象的内容流向对象的左侧)</p>
+	<div style="width: 1200px;height: 150px">
+		<div style="width:100px;height: 100px;float: right;background: green">1</div>
+		<div id="two">2</div>
+		<div id="three">3</div>
+	</div>
+	<br>
+	<br>
+	<br>
+	<br>
+	<p>左浮动模式布局(对象想左浮动，而对象的内容流向对象的右侧,即后面的div会给覆盖掉)</p>
+	<div style="width: 1200px;height: 150px">
+		<div style="width:100px;height: 100px;float: left;background: green">1</div>
+		<div style="width:150px;height: 150px;background: red">2</div>
+		<div id="three">3</div>
+	</div>
+</body>
+</html>

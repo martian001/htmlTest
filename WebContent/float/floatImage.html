@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+/* 不一样的浏览器对于以下元素会有默认的内外边距，所以写网页第一步就要把这些内外边距去掉 */
+body, div, ul, li, img, p, h1, h2, h3, h4, h5 {
+	margin: 0;
+	padding: 0;
+}
+
+ul {
+	margin: 100px auto; /* 居中：上下100px，左右自动 */
+	height: 160px;
+	width: 800px;
+	border: 1px solid red;
+}
+
+ul li {
+	list-style: none; /* 把li的点去掉 */
+}
+
+#ul_1 li {
+	float: left;
+}
+/* ----------------------------------------------------------------- */
+#one {
+	background: url("../images/index-img-1.jpg") no-repeat;
+	width: 231px;
+	height: 160px;
+	float: left;
+}
+
+#two {
+	background: url("../images/index-img-2.jpg") no-repeat;
+	width: 231px;
+	height: 160px;
+}
+
+#three {
+	background: url("../images/index-img-3.jpg") no-repeat;
+	width: 231px;
+	height: 160px;
+}
+</style>
+</head>
+<body>
+	<p>当块里面有元素时，即图片1飘起来了，1处飘一来这个地方就给占据，后面的图片也跟着飘就不会到后面去了，即不会覆盖</p>
+	<ul id="ul_1">
+		<li>1<img alt="" src="../images/index-img-1.jpg"></li>
+		<li>2<img alt="" src="../images/index-img-2.jpg"></li>
+		<li>3<img alt="" src="../images/index-img-3.jpg"></li>
+	</ul>
+	<br>
+	<br>
+	<p>当块里面没有元素时，1飘了起来，这个时候1的位置就让出来了，2到1的位置，所以2就看不见了</p>
+	<ul>
+		<li id="one">1</li>
+		<li id="two">2</li>
+		<li id="three">3</li>
+	</ul>
+</body>
+</html>
